@@ -24,12 +24,12 @@ struct MainScreen: View {
                     Button {
                         viewModel.isLocked.toggle()
                     } label: {
-                        BrandButton(text: viewModel.isLocked ? "Unlock" : "Lock")
+                        BrandButtonLabel(text: viewModel.isLocked ? "Unlock" : "Lock")
                     }
                     Button {
                         viewModel.showFromTop.toggle()
                     } label: {
-                        BrandButton(text: "Open From Top", disabled: viewModel.isLocked)
+                        BrandButtonLabel(text: "Open From Top", disabled: viewModel.isLocked)
                     }
                     .disabled(viewModel.isLocked)
                 }
@@ -39,7 +39,7 @@ struct MainScreen: View {
                 Button {
                     
                 } label: {
-                    BrandButton(text: "Open full")
+                    BrandButtonLabel(text: "Open full")
                         .padding(.horizontal, 20)
                 }
                 

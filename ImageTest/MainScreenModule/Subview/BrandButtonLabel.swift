@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BrandButton: View {
+struct BrandButtonLabel: View {
     let text: String
     var disabled: Bool = false
     var body: some View {
@@ -29,6 +29,6 @@ struct BrandButton: View {
 
 struct BrandButton_Previews: PreviewProvider {
     static var previews: some View {
-        BrandButton(text: "Brand Button")
+        BrandButtonLabel(text: "Brand Button")
     }
 }

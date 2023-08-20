@@ -41,14 +41,4 @@ struct DetailView_Previews: PreviewProvider {
     }
 }
 
-struct CloseButtonLabel: View {
-    var body: some View {
-        ZStack {
-            Circle()
-                .frame(width: 32, height: 32)
-                .foregroundColor(.gray)
-            Image(systemName: "xmark")
-                .foregroundColor(.white)
-        }
-    }
-}
+
