@@ -62,6 +62,7 @@
 				A2598DC82A924FF7009F28D2 /* ImageTestApp.swift */,
 				A2598DDA2A9250F6009F28D2 /* MainScreenModule */,
 				A2598DDB2A925102009F28D2 /* DetailViewModule */,
+				A2598DDC2A9261DA009F28D2 /* Subview */,
 				A2598DCC2A924FF8009F28D2 /* Assets.xcassets */,
 				A2598DCE2A924FF8009F28D2 /* Preview Content */,
 			);
@@ -80,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				A2598DCA2A924FF7009F28D2 /* MainScreen.swift */,
-				A2598DDC2A9261DA009F28D2 /* Subview */,
 				A2598DD62A9250E3009F28D2 /* MainScreenVM.swift */,
 			);
 			path = MainScreenModule;
