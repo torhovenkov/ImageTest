@@ -8,17 +8,47 @@
 import SwiftUI
 
 struct DetailView: View {
+    @Binding var showFromTop: Bool
     var body: some View {
-        Image("panda")
-            .resizable()
-            .scaledToFill()
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        ZStack {
+            GeometryReader { geo in
+                Image("panda")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: geo.size.width, height: geo.size.height, alignment: .leading)
+            }
             .ignoresSafeArea()
+            VStack(alignment: .trailing) {
+                HStack{
+                    Spacer()
+                    Button {
+                        showFromTop = false
+                    } label: {
+                        CloseButtonLabel()
+                        
+                    }
+                    .padding(20)
+                }
+                Spacer()
+            }
+        }
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView()
+        DetailView(showFromTop: .constant(false))
+    }
+}
+
+struct CloseButtonLabel: View {
+    var body: some View {
+        ZStack {
+            Circle()
+                .frame(width: 32, height: 32)
+                .foregroundColor(.gray)
+            Image(systemName: "xmark")
+                .foregroundColor(.white)
+        }
     }
 }
