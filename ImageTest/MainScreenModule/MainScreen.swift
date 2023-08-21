@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainScreen: View {
     @StateObject var viewModel = MainScreenVM()
+    @State var arr = Array(repeating: false, count: 10)
     var body: some View {
         ZStack {
             Color.gray
@@ -34,7 +35,24 @@ struct MainScreen: View {
                     .disabled(viewModel.isLocked)
                 }
                 .padding(.horizontal, 20)
-                
+                ScrollView {
+                    ForEach(0..<arr.count, id: \.self) {elem in
+                            Button {
+                                arr[elem].toggle()
+                            } label: {
+                                HStack{
+                                    Text("Text \(elem)")
+                                        .foregroundColor(.black)
+                                    Spacer()
+                                    Image(systemName: arr[elem] ? "circle.fill" : "circle")
+                                        .foregroundColor(.red)
+                                }
+                                .padding(.top, 1)
+                            }
+
+                        }
+                        .padding(.horizontal)
+                }
                 Spacer()
                 Button {
                     
